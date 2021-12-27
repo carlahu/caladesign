@@ -3,35 +3,64 @@
 
 <head>
   
-  <link rel="stylesheet" type="text/css" href="style.css">
-  
-  <title> Homepage
-  </title>
+<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>hangman</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
   
 </head>
 
 <body>
-  <div class="info">Try to guess the hidden word below before it's too late! You can guess either one letter at a time or the whole word, but if you get the word wrong you lose 2 guesses!</div>
-  <input type="text" placeholder="Guess">
-  <button style="display:none;">Play Again</button>
-  <div class="word"></div>
-  <div class="hangman"></div>
-<span style="position:absolute;bottom:10px;left:10px;">
-   <div class="guessesLeft">Guesses left: <span class="bold">10</span></div>
-   <div class="guessed">Guessed letters: <span class="bold"></span></div>
-</span>
-<span style="position:absolute;bottom:10px;right:10px;text-align:right;">
-   <div>Streak: <span class="streak bold">0</span></div>
-   <div>Average score: <span class="score bold">-</span></div>
-</span>
-  <p>
-    Welcome to the Homepage. You may direct yourself to a variety of Cala's designs.
-  </p>
-  
-  <img src="https://i.imgur.com/d0p12xb.png" width="500px">
-      
-  
-      
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>hangman</h1>
+        <p>Please enter the guessing letter</p>
+        <div class="game-container">
+            <svg height="250" width="200" class="figure-container">
+                <!-- rode -->
+                <line x1="60" y1="20" x2="140" y2="20"></line>
+                <line x1="140" y1="20" x2="140" y2="50"></line>
+                <line x1="60" y1="20" x2="60" y2="230"></line>
+                <line x1="20" y1="230" x2="100" y2="230"></line>
+                <!-- head -->
+                <circle cx="140" cy="70" r="20" class="figure-part"></circle>
+                <!-- body -->
+                <line x1="140" y1="90" x2="140" y2="150" class="figure-part"></line>
+                <!-- arm -->
+                <line x1="140" y1="120" x2="120" y2="100" class="figure-part"></line>
+                <line x1="140" y1="120" x2="160" y2="100" class="figure-part"></line>
+                <!-- legs -->
+                <line x1="140" y1="150" x2="120" y2="180" class="figure-part"></line>
+                <line x1="140" y1="150" x2="160" y2="180" class="figure-part"></line>
+            </svg>
+
+            <div class="wrong-letters-container">
+                <div id="wrong-letters">
+                    <!-- wrong span -->
+                </div>
+            </div>
+            <div class="word" id="word">
+                <!-- letter -->
+            </div>
+        </div>
+
+        <!-- final message -->
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2 id="final-message">You won!</h2>
+                <button id="play-button">Play again!</button>
+            </div>
+        </div>
+
+        <!-- notification -->
+        <div class="notification-container" id="notification-container">
+            <p>You have tried this letter!</p>
+        </div>
+
+        <script src="script.js" async defer></script>
 </body>
 
 </html>
